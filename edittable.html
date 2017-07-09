@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+      .container-uiview{
+      width: 100%;
+         margin-top: 4.1%;
+             background: white;
+    }
+    th{
+      text-align: center;
+    }
+    </style>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="navbar.css">
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <!-- JS (load angular, ui-router, and our custom js file) -->
+
+    <script src="https://code.angularjs.org/1.6.4/angular.js"></script>
+    <script src="lib/xeditable.js"></script>
+    <!-- <script src="http://vitalets.github.io/angular-xeditable/starter/angular-xeditable/js/xeditable.js"></script> -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+    <script src="http://d.godfath.com/auth/js/lib/angular-ui-router-1.0.3.min2.js"></script>
+    <script src="app.js"></script>
+    <script src="animate.js"></script>
+   
+</head>
+<body >
+  <div ng-controller="EditableRowCtrl">
+  <table class="table table-bordered table-hover table-condensed">
+    <tr style="font-weight: bold">
+      <td style="width:35%">Name</td>
+      <td style="width:20%">Status</td>
+      <td style="width:20%">Group</td>
+      <td style="width:25%">Edit</td>
+    </tr>
+    <tr ng-repeat="user in users">
+      <td>
+        <!-- editable username (text with validation) -->
+        <span editable-text="user.name" e-form="rowform" >
+          {{ user.name || 'empty' }}
+        </span>
+      </td>
+      <td>
+        <!-- editable status (select-local) -->
+        <span editable-select="user.status" e-name="status" e-form="rowform" >
+          {{ showStatus(user) }}
+        </span>
+      </td>
+      <td>
+        <!-- editable group (select-remote) -->
+        <span editable-select="user.group" e-name="group" onshow="loadGroups()" e-form="rowform" >
+          {{ showGroup(user) }}
+        </span>
+      </td>
+      <td style="white-space: nowrap">
+        <!-- form -->
+        <form editable-form name="rowform" onbeforesave="saveUser($data, user.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == user">
+          <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+            save
+          </button>
+          <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
+            cancel
+          </button>
+        </form>
+        <div class="buttons" ng-show="!rowform.$visible">
+          <button type="button" class="btn btn-primary" ng-click="rowform.$show()">edit</button>
+          <button type="button" class="btn btn-danger" ng-click="removeUser($index)">del</button>
+        </div>  
+      </td>
+    </tr>
+  </table>
+
+  <button type="button" class="btn btn-default" ng-click="addUser()">Add row</button>
+</div>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+   <script type="text/javascript">
+   angular.module('app', ['ngAnimate', 'ui.router','xeditable'])
+     .controller('EditableRowCtrl', function($scope, $filter, $http) {
+  $scope.users = [
+    {id: 1, name: 'awesome user1', status: 2, group: 4, groupName: 'admin'},
+    {id: 2, name: 'awesome user2', status: undefined, group: 3, groupName: 'vip'},
+    {id: 3, name: 'awesome user3', status: 2, group: null}
+  ]; 
+
+  $scope.statuses = [
+    {value: 1, text: 'status1'},
+    {value: 2, text: 'status2'},
+    {value: 3, text: 'status3'},
+    {value: 4, text: 'status4'}
+  ]; 
+
+  $scope.groups = [];
+  $scope.loadGroups = function() {
+    return $scope.groups.length ? null : $http.get('/groups').success(function(data) {
+      $scope.groups = data;
+    });
+  };
+
+  $scope.showGroup = function(user) {
+    if(user.group && $scope.groups.length) {
+      var selected = $filter('filter')($scope.groups, {id: user.group});
+      return selected.length ? selected[0].text : 'Not set';
+    } else {
+      return user.groupName || 'Not set';
+    }
+  };
+
+  $scope.showStatus = function(user) {
+    var selected = [];
+    if(user.status) {
+      selected = $filter('filter')($scope.statuses, {value: user.status});
+    }
+    return selected.length ? selected[0].text : 'Not set';
+  };
+
+  $scope.checkName = function(data, id) {
+    if (id === 2 && data !== 'awesome') {
+      return "Username 2 should be `awesome`";
+    }
+  };
+
+  $scope.saveUser = function(data, id) {
+    //$scope.user not updated yet
+    angular.extend(data, {id: id});
+    return $http.post('/saveUser', data);
+  };
+
+  // remove user
+  $scope.removeUser = function(index) {
+    $scope.users.splice(index, 1);
+  };
+
+  // add user
+  $scope.addUser = function() {
+    $scope.inserted = {
+      id: $scope.users.length+1,
+      name: '',
+      status: null,
+      group: null 
+    };
+    $scope.users.push($scope.inserted);
+  };
+});
+   </script>
+</body>
+
+</html>

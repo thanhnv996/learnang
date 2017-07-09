@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html >
+    <head>    
+        <style type="text/css">
+            .container-uiview{
+                width: 100%;
+                margin-top: 4.1%;
+                background: white;
+            }
+            th{
+                text-align: center;
+            }
+        </style>
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="navbar.css">
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+        <script src="https://code.angularjs.org/1.6.4/angular.js"></script>
+        <script src="lib/xeditable.js"></script>
+        <!-- <script src="http://vitalets.github.io/angular-xeditable/starter/angular-xeditable/js/xeditable.js"></script> -->
+        <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/> -->
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script> -->
+        <script src="http://d.godfath.com/auth/js/lib/angular-ui-router-1.0.3.min2.js"></script>
+        <script src="app.js"></script>
+        <script src="animate.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+        <script type="text/javascript">
+            var app = angular.module('myApp', ["xeditable"]);
+            app.controller('ArrayController', function ($scope) {
+                $scope.test = "manu";
+                $scope.user = {
+                    name: 'awesome user'
+                };
+            });
+        </script>
+
+    </head>
+    <body >
+        <div ng-app='myApp' ng-controller="ArrayController">
+
+
+                                    <td><input type="checkbox" class="checkthis" /></td>
+                                    <td>
+                                        <span editable-text="user.name" e-form="textBtnForm">
+                                            {{user.name|| 'empty' }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        -------------------
+                                    </td>
+                                    <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
+                                    <td>isometric.mohsin@gmail.com</td>
+                                    <td>+923335586757</td>
+                                    <td>
+                                        <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" type="button" class="btn btn-default" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible" ><span class="glyphicon glyphicon-pencil"></span></button></p>
+                                        <span ng-show="textBtnForm.$visible">
+                                            <!-- save -->
+                                            <form action="#" editable-form name="textBtnForm"> 
+                                            <p data-placement="top" data-toggle="tooltip" title="Save"><button type="submit" class="btn btn-success btn-xs" data-title="Save"   ng-disabled="textBtnForm.$waiting"><span class="glyphicon glyphicon-floppy-saved"></span></button></p>
+                                </form>
+                                            
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" ng-click="removeItem($index)"  ng-hide="textBtnForm.$visible"><span class="glyphicon glyphicon-trash"></span></button></p>
+                                        <span ng-show="textBtnForm.$visible">
+                                            <!-- close -->
+                                            <p data-placement="top" data-toggle="tooltip" title="Close"><button class="btn btn-danger btn-xs" data-title="Close" type="button" ng-disabled="textBtnForm.$waiting" ng-click="textBtnForm.$cancel()"><span class="glyphicon glyphicon-remove" ></span></button></p>
+                                        </span>
+
+                                    </td> 
+
+
+
+
+
+
+
+
+
+        <!-- <form action="#" editable-form name="textBtnForm"> 
+
+                                        <span editable-text="user.name">
+                                            {{user.name|| 'empty' }}
+                                        </span>
+
+                                        <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" type="button" class="btn btn-default" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible" ><span class="glyphicon glyphicon-pencil"></span></button></p>
+
+                                        <span ng-show="textBtnForm.$visible">
+
+                                            <p data-placement="top" data-toggle="tooltip" title="Save"><button class="btn btn-success btn-xs" data-title="Save"  type="submit" ng-disabled="textBtnForm.$waiting"><span class="glyphicon glyphicon-floppy-saved"></span></button></p>
+                                            
+                                            <p data-placement="top" data-toggle="tooltip" title="Close"><button class="btn btn-danger btn-xs" data-title="Close" type="button" ng-disabled="textBtnForm.$waiting" ng-click="textBtnForm.$cancel()"><span class="glyphicon glyphicon-remove" ></span></button></p>
+                                        </span>
+                                </form> -->
+
+
+
+
+
+
+            <!-- <form action="#" editable-form name="textBtnForm"> 
+                <span editable-text="user.name">
+                    {{ user.name || 'empty' }}
+                </span>
+
+                <button type="button" class="btn btn-default" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">edit
+                </button>
+
+                <span ng-show="textBtnForm.$visible">
+                    <button type="submit" class="btn btn-primary" ng-disabled="textBtnForm.$waiting">
+                        Save
+                    </button>
+                    <button type="button" class="btn btn-default" ng-disabled="textBtnForm.$waiting" ng-click="textBtnForm.$cancel()">
+                        Cancel
+                    </button>
+                </span>
+            </form> -->
+        </div>
+    </body>
+</html>

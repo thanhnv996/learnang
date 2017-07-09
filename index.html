@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- JS (load angular, ui-router, and our custom js file) -->
+    <script src="https://code.angularjs.org/1.6.4/angular.js"></script>
+    <script src="http://d.godfath.com/auth/js/lib/angular-ui-router-1.0.3.min2.js"></script>
+    <script src="app.js"></script>
+    <script src="animate.js"></script>
+   
+</head>
+
+<body ng-app="routerApp">
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="home">AngularUI Router</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="about">About us</a></li>
+        <li><a ui-sref="home">home</a></li>
+    </ul>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+    <div ui-view id="view" ng-class="ctrl.transition"></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+</body>
+</html>
