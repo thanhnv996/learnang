@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,3 +36,23 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
 </body>
 </html>
+=======
+---
+layout: default
+title: Home
+---
+    
+<h1 class="site-title"><b>inuitcss</b> &ndash; a powerful, scalable, Sass-based, BEM, OOCSS framework.</h1>
+
+<ul class="post-list">
+    {% for post in site.posts %}
+    <li>
+        <span class="post__time">{{ post.date | date: "%d %B, %Y" }}</span>
+        <h2 class="post__title"><a href="{{ site.root }}{{ post.url }}">{{ post.title }}</a></h2>
+        {% if post.meta %}
+            <p class="post__meta">{{ post.meta }}</p>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+>>>>>>> 82788dcd0d7d78d248bb133ae5e58c13443e2dc9
