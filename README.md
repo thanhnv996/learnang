@@ -6,29 +6,52 @@
 * Vũ Thị Thùy
 
 ### Mục lục
-	I. Giới thiệu
-	II. Cài đặt
-		1. Cài đặt Server
-		2. Cài đặt Editor
-		3. Tải thư viện Phaser
-	III. Chuẩn bị dữ liệu
-		1.Cấu trúc project
-		2.Assets
-		3.Unit
-		4.Img-for-sentences
-		5.AtlanJson
-		6.Sentences
-	IV. Xây dựng game
-		1.Tạo file index.html 
-		2.Import thư viện Phaser và các file Javascript trong index.html
-		3.	Constructor game 
-		4.	Boot.js
-		5.	Preloader.js
-		6.	Welcome.js
-		7.	MainMenu.js
-		8.	Play.js
-	V. Tài liệu tham khảo
-	VI. Demo game
+I. Giới thiệu
+
+II. Cài đặt
+
+1. Cài đặt Server
+
+2. Cài đặt Editor
+
+3. Tải thư viện Phaser
+
+III. Chuẩn bị dữ liệu
+
+1. Cấu trúc project
+
+2. Assets
+
+3. Unit
+
+4. Img-for-sentences
+
+5. AtlanJson
+
+6. Sentences
+
+IV. Xây dựng game
+
+1. Tạo file index.html 
+
+2. Import thư viện Phaser và các file Javascript trong index.html
+
+3. Constructor game 
+
+4. Boot.js
+
+5. Preloader.js
+
+6. Welcome.js
+
+7. MainMenu.js
+
+8. Play.js
+
+V. Tài liệu tham khảo
+
+VI. Demo game
+
 ---
 ## I. Giới thiệu
 Phaser là một game framework cho desktop và mobile. Nó nhanh, miễn phí và là mã nguồn mở. Phiên bản Phaser hiện tại là 2.6.2. Nó hỗ trợ cho cả WebGL và Canvas. Nó có một loạt các tính năng giúp bạn trong việc phát triển game. 
