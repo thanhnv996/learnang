@@ -10,14 +10,18 @@ Phaser là một game framework cho desktop và mobile. Nó nhanh, miễn phí v
 ## II. Cài đặt
 
 **1. Cài đặt Web server.** 
-	Sử dụng **WAMP** Server hoặc **XAMPP** , cả hai đều có hướng dẫn cài đặt dễ dàng. Đặc biệt WAMP cài đặt một biểu tượng vào khay hệ thống của bạn, từ đó bạn có thể dừng lại và khởi động lại các dịch vụ, cũng như sửa đổi cài đặt Apache chẳng hạn như tạo một bí danh thư mục mới cho một dự án.
+
+Sử dụng **WAMP** Server hoặc **XAMPP** , cả hai đều có hướng dẫn cài đặt dễ dàng. Đặc biệt WAMP cài đặt một biểu tượng vào khay hệ thống của bạn, từ đó bạn có thể dừng lại và khởi động lại các dịch vụ, cũng như sửa đổi cài đặt Apache chẳng hạn như tạo một bí danh thư mục mới cho một dự án.
 	
 **2. Cài đặt Editor**
-	Sử dụng **SublimeText** hoặc Editor ưa thích.
+
+Sử dụng **SublimeText** hoặc Editor ưa thích.
 	
 **3. Tải thư viện Phaser**
-	* Tải thư viện Phaser từ trang chủ của Phaser : [https://phaser.io ](https://phaser.io "Phaser")
-	* Giải nén file RAR download được sau đó coppy vào Project Game.
+	
+* Tải thư viện Phaser từ trang chủ của Phaser : [https://phaser.io ](https://phaser.io "Phaser")
+	
+* Giải nén file RAR download được sau đó coppy vào Project Game.
 ## III. Chuẩn bị dữ liệu
 1. **Cấu trúc Project**
 	
@@ -27,11 +31,13 @@ Phaser là một game framework cho desktop và mobile. Nó nhanh, miễn phí v
 3. **Unit**
 	Danh sách hình ảnh về các chủ đề
 ![enter image description here](https://lh3.googleusercontent.com/-WO5drSlzTKs/WiLNRqFQCCI/AAAAAAAABJs/2i_LxBtUtaQ5ok_HXxj9T7F-eJ0C5BS5gCLcBGAs/s0/3.png "3.png")
+
 4. **Img-for-sentences**
 
 	Danh sách các hình ảnh cho mỗi chủ đề
 	 
 	 ![enter image description here](https://lh3.googleusercontent.com/-cK3RU3pDZQI/WiLNX_fcrqI/AAAAAAAABJ0/HcB6UbogsSkUe5P_IhzbYWDJflZSrhelgCLcBGAs/s0/4.png "4.png")
+	 
 	Với chủ đề “Time”(hình ảnh “1” trong “unit” ) ta sẽ có hình ảnh s_1 (trong “img-for-sentences”) tương ứng. Trong s_1 lại là danh sách các hình ảnh liên quan đến các câu hỏi về thời gian. 
 ![enter image description here](https://lh3.googleusercontent.com/-l9zZ1tl_w04/WiLNh21D3oI/AAAAAAAABKE/ZoqoBbfYVrU_LuNlOhrnRh8AaPSONeBYwCLcBGAs/s0/s_1.png "s_1.png")
 
@@ -66,11 +72,12 @@ Giả sử mỗi hình ảnh là một bản đồ thì tương ứng ta có cá
 		* W là width – độ rộng của frame.
 		* H là height – chiều cao của frame.
 	
-	Như vậy khi ta có 1 hình ảnh gồm nhiều frame và 1 AtlasJson ta sẽ  lấy được 1 danh sách các frame trong hình ảnh đó.
-6.	 Sentences
-	Gồm tập hợp các file Json , mỗi file Json là 1 chủ đề : 
-	
-	![enter image description here](https://lh3.googleusercontent.com/-vpwsAj2G24A/WiLN4mnwSnI/AAAAAAAABKg/Sra7HfZLPe4gUeeYBXYhkdodm0N4D18qACLcBGAs/s0/7.png "7.png")
+Như vậy khi ta có 1 hình ảnh gồm nhiều frame và 1 AtlasJson ta sẽ  lấy được 1 danh sách các frame trong hình ảnh đó.
+6.	 **Sentences**
+
+Gồm tập hợp các file Json , mỗi file Json là 1 chủ đề : 
+
+![enter image description here](https://lh3.googleusercontent.com/-vpwsAj2G24A/WiLN4mnwSnI/AAAAAAAABKg/Sra7HfZLPe4gUeeYBXYhkdodm0N4D18qACLcBGAs/s0/7.png "7.png")
 	Hình ảnh trên là file Json về chủ đề “Time” . File này là 1 mảng các Object . Mỗi object lại là một câu hỏi :
 	* Line : Câu đầy đủ / chính xác . 
 	* Alt1 : Câu thứ nhất bị thiếu .
