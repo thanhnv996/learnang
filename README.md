@@ -184,7 +184,7 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 
 	* **Game.load.image()**
  
-		Thêm 'hình ảnh' vào Loader.
+		Thêm 'hình ảnh' vào **Loader**.
 
 		Tên|	Kiểu|	Mô tả
 		--- | --- | ---
@@ -194,7 +194,7 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 
 	* **Game.load.atlas()**
  
-		Thêm một cấu trúc Atlas mới ('textureatlas') vào Loader. Textures Atlases có thể được tạo ra bằng các công cụ như Texture Packer và Shoebox.
+		Thêm một cấu trúc **Atlas** mới ('**textureatlas**') vào **Loader**. **Textures Atlases** có thể được tạo ra bằng các công cụ như Texture Packer và Shoebox.
 
 		Tên	|Kiểu	|Mô tả
 		--- | --- | ---
@@ -205,9 +205,9 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 		Format	|Number|	Giá trị mô tả định dạng dữ liệu.
 	* **Game.load.spritesheet()**
  
-		Thêm một sprite sheet mới ('spritesheet') vào bộ nạp.
-		Sprite : là một thành phần không thể thiếu trong game, là một đối tượng đồ họa được vẽ lên màn hình(Screen). Có thể thao tác chúng và làm chúng di chuyển.
-		Sprite Sheet : là tập hợp nhiều các Sprite . Giúp dễ dàng quản lý file hình ảnh , làm giảm kích thước tập tin tổng thể so với từng Sprite riêng rẽ.
+		Thêm một **sprite sheet** mới ('**spritesheet**') vào bộ nạp.
+		**Sprite** : là một thành phần không thể thiếu trong game, là một đối tượng đồ họa được vẽ lên màn hình(**Screen**). Có thể thao tác chúng và làm chúng di chuyển.
+		**Sprite Sheet** : là tập hợp nhiều các **Sprite** . Giúp dễ dàng quản lý file hình ảnh , làm giảm kích thước tập tin tổng thể so với từng **Sprite** riêng rẽ.
 
 		Tên|	Kiểu|	Mô tả
 		--- | --- | ---
@@ -222,7 +222,7 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 	Sau khi nạp xong các thành phần vào Loader. Hàm create sẽ chuyển state sang state Welcome
 
 	
-6.	Welcome.js
+**6.	Welcome.js**
 	 ```javascript
 	Game.Welcome = function(game){
 	};
@@ -256,22 +256,22 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 		}
 	}
 	```
-	*	Tạo hàm createButton để custom button, gồm các params :  
-		*	Game : Trò chơi được khởi tạo của chúng ta .
-		*	String : Value của button .
-		*	X : vị trí X .
-		*	Y : vị trí Y.
-		*	W : chiều rộng button.
-		*	H : chiều cao button.
-		*	Callback : hàm được gọi khi click vào button.
-	*	Game.world : Một trò chơi chỉ có một world. World là một nơi trừu tượng trong đó tất cả các đối tượng trò chơi sống. Nó không bị ràng buộc bởi các giới hạn stage và có thể được bất kỳ kích thước. Bạn nhìn vào world thông qua máy ảnh. Tất cả các đối tượng trò chơi sống trong thế giới ở các tọa độ trên world. Theo mặc định, world được tạo cùng kích thước với Stage của bạn. 
-	*	Game.world.centerX : 
-	Lấy vị trí X tương ứng với điểm trung tâm của world.
-	*	Game.world.centerY : 
-	Lấy vị trí Y tương ứng với điểm trung tâm của world.
-	*	Khi tạo xong các button đã được custom cho trò chơi . Khi click vào button “Play” hàm callback sẽ được gọi và state chuyển thành MainMenu.
+	*	Tạo hàm **createButton** để custom button, gồm các **params** :  
+		*	**Game** : Trò chơi được khởi tạo của chúng ta .
+		*	**String** : Value của button .
+		*	**X** : vị trí X .
+		*	**Y** : vị trí Y.
+		*	**W** : chiều rộng button.
+		*	**H** : chiều cao button.
+		*	**Callback** : hàm được gọi khi click vào button.
+	*	**Game.world** : Một trò chơi chỉ có một world. World là một nơi trừu tượng trong đó tất cả các đối tượng trò chơi sống. Nó không bị ràng buộc bởi các giới hạn stage và có thể được bất kỳ kích thước. Bạn nhìn vào world thông qua máy ảnh. Tất cả các đối tượng trò chơi sống trong thế giới ở các tọa độ trên world. Theo mặc định, world được tạo cùng kích thước với Stage của bạn. 
+	*	**Game.world.centerX** : 
+	Lấy vị trí X tương ứng với điểm trung tâm của **world**.
+	*	**Game.world.centerY** : 
+	Lấy vị trí Y tương ứng với điểm trung tâm của **world**.
+	*	Khi tạo xong các button đã được custom cho trò chơi . Khi click vào button “**Play**” hàm **callback** sẽ được gọi và state chuyển thành **MainMenu.**
 
-7.	MainMenu.js
+**7.	MainMenu.js**
 
  	```javascript
 	Game.MainMenu = function(game){
@@ -304,9 +304,9 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 		},
 	}
 	```
-	*	Hàm createButton của MainMenu.js được custom thêm params “pictureName”  và loại bỏ text cho button. Button này đơn thuần chỉ là 1 hình ảnh .
-	*	Khi click button hàm callback được gọi và truyền giá trị cho biến “unitClick” . Ở đây “unitClick” sẽ nằm trong khoảng từ 0 đến 23 ,  tương ứng với số file sentencesJson . Và sau đó state sẽ chuyển sang Play state.
-8.	Play.js
+	*	Hàm **createButton** của **MainMenu.js** được custom thêm params “**pictureName**”  và loại bỏ text cho button. Button này đơn thuần chỉ là 1 hình ảnh .
+	*	Khi click button hàm **callback** được gọi và truyền giá trị cho biến “**unitClick**” . Ở đây “**unitClick**” sẽ nằm trong khoảng **từ 0 đến 23** ,  tương ứng với số file **sentencesJson** . Và sau đó **state** sẽ chuyển sang **Play state**.
+**8.	Play.js**
 	*	Khởi tạo các biến toàn cục.
 	 	```javascript
 		Game.Play = function(game){
@@ -357,8 +357,8 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 				    sets = myJson.sets;
 		```
  
-	*	Tiếp theo  ta cần lấy URL của file sentences json tương ứng với “unitClick” được truyền từ bên MainMenu.js
-	*	Hàm getAllSuportedItems hỗ trợ đọc file sentences json (sử dụng jquery) và trả lại chuỗi Json được bắt lại sau khi đọc xong. 
+	*	Tiếp theo  ta cần lấy **URL** của file **sentences json** tương ứng với “**unitClick**” được truyền từ bên **MainMenu.js**
+	*	Hàm **getAllSuportedItems** hỗ trợ đọc file **sentences json** (sử dụng **jquery**) và trả lại chuỗi Json được bắt lại sau khi đọc xong. 
 	*	Thêm các element cần thiết cho game
  		```javascript
 		groupButton1 = game.add.group();
@@ -388,13 +388,13 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 	    imgSuggest.inputEnabled = true;
 	    imgSuggest.input.pixelPerfectClick = true;
 		```
-	*	Phân tích JSON Sentences , tạo các bộ câu trả lời . Ban đầu countSet  = 0 , tức là ta đang lấy câu đầu tiên trong bộ câu hỏi (sets). 
+	*	Phân tích **JSON Sentences** , tạo các bộ câu trả lời . Ban đầu **countSet  = 0** , tức là ta đang lấy **câu đầu tiên** trong **bộ câu hỏi (sets).** 
  
 		||
 
-		Ở đây answerSet(bộ câu trả lời) sẽ là 1 mảng 2 chiều , ta sẽ phân tích thành 1 ma trận : 
+		Ở đây **answerSet(bộ câu trả lời)** sẽ là 1 **mảng 2 chiều** , ta sẽ phân tích thành **1 ma trận** : 
  
-		Với mỗi hàng ngang sẽ là 1 answerSet ( 1 bộ câu trả lời ) và ta có 4 bộ câu câu trả lời  . 
+		Với mỗi **hàng ngang** sẽ là 1 **answerSet** ( 1 **bộ câu trả lời** ) và ta có 4 bộ câu câu trả lời  . 
 		Số bộ trả lời còn tùy thuộc vào số từ của câu trả lời đúng : .
 		Và code của trình tự này là : 
 		```javascript
@@ -436,7 +436,7 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 		    	}	    	
 	    }
 		```
-	* createButton()
+	*** createButton()**
 		```javascript
 
 			function createButton(game,string,answer,x,y,w,h,callback){
@@ -446,9 +446,9 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 					{game:game,textClick:string , answer:answer , button : button1 , txt :txt ,groupButton1:groupButton1});
 			}
 
-	 Khi click vào button sẽ gọi đến hàm checkAnswer để kiếm tra đáp án trong button có đúng hay không .Ta cần truyển thêm tham số cho hàm checkAnswer , quan trọng nhất là textClick (text hiển thị trên button) và answer(câu trả lời chính xác) . 
-* checkAnswer()
-		
+	 Khi click vào button sẽ gọi đến hàm checkAnswer để kiếm tra đáp án trong button có đúng hay không .Ta cần truyển thêm tham số cho hàm **checkAnswer** , quan trọng nhất là **textClick** (text hiển thị trên button) và **answer**(câu trả lời chính xác) . 
+*** checkAnswer()**
+		```javascript
 	 	function checkAnswer(items){
 			// alert(this.textClick+'	'+this.answer);
 			if(this.textClick === this.answer){
@@ -486,10 +486,10 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 			}
 		}
 		```
-		Sau khi callback của button được gọi nó sẽ truyền param textClick(text-đáp án lựa chọn) và answer(text-đáp án chính xác). Ta sẽ kiểm tra đáp án lựa chọn có là chính xác không. 
-		Nếu sai ta sử dụng graphic ( đồ họa trong Phaser ) để hiển thị hiệu ứng chọn sai hủy button(đáp án) đó, tăng câu sai thêm 1 . 
-		Còn nếu đúng ta sử dụng graphic ( đồ họa trong Phaser ) để hiển thị hiệu ứng chính xác ,hủy groupButton ( danh sách các button đáp án ) , hủy text , tăng số đáp án chính xác lên 1 và quan trọng nhất là chạy hàm nextAnswerSet() .
-	* nextAnswerSet()
+		Sau khi **callback** của **button** được gọi nó sẽ truyền **param textClick**(text-đáp án lựa chọn) và **answer**(text-đáp án chính xác). Ta sẽ kiểm tra đáp án lựa chọn có là chính xác không. 
+		Nếu sai ta sử dụng **graphic** ( đồ họa trong **Phaser** ) để hiển thị hiệu ứng chọn sai hủy button(đáp án) đó, tăng câu sai thêm 1 . 
+		Còn nếu đúng ta sử dụng **graphic** ( **đồ họa trong Phaser** ) để hiển thị hiệu ứng chính xác ,hủy **groupButton** ( danh sách các button đáp án ) , hủy text , tăng số đáp án chính xác lên 1 và quan trọng nhất là chạy hàm **nextAnswerSet()** .
+	* **nextAnswerSet()**
 		```javascript
 	 	function nextAnswerSet(game) {
 			countAnswerSet++;
@@ -537,9 +537,9 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 			
 		}
 		```
-		Sau khi trả lời đúng ta sẽ tăng biến đếm bộ câu trả lời thêm 1 . Nếu bộ câu trả lời chưa vượt quá , khi đó ta reset hình ảnh gợi ý mới , button được thêm bộ câu trả lời mới và vẫn có hàm callback() đến checkAnswer và nếu checkAnswer đúng sẽ lại chạy đến hàm nextAnswerSet (đệ quy) . 
-		Nó sẽ đệ quy như thế cho đến khi biến đếm bộ câu trả lời bị vượt quá số lượng. Khi này biến countSet(đếm câu hỏi) sẽ được tăng thêm 1 đơn vị. và nó sẽ nhảy sang câu hỏi tiếp theo với danh sách bộ câu trả lời mới. 
-		Trường hợp tiếp theo là khi biến countSet bị vượt quá ( số câu hỏi là có giới hạn ) khi đó ta sẽ hiển thị thông báo là Unit đã hoàn thành.  
+		Sau khi trả lời đúng ta sẽ tăng biến đếm bộ câu trả lời thêm 1 . Nếu bộ câu trả lời chưa vượt quá , khi đó ta reset hình ảnh gợi ý mới , button được thêm bộ câu trả lời mới và vẫn có hàm **callback()** đến **checkAnswer** và nếu **checkAnswer** đúng sẽ lại chạy đến hàm **nextAnswerSet** (đệ quy) . 
+		Nó sẽ đệ quy như thế cho đến khi biến đếm bộ câu trả lời bị vượt quá số lượng. Khi này biến **countSet**(đếm câu hỏi) sẽ được tăng thêm 1 đơn vị. và nó sẽ nhảy sang câu hỏi tiếp theo với danh sách bộ câu trả lời mới. 
+		Trường hợp tiếp theo là khi biến **countSet** bị vượt quá ( số câu hỏi là có giới hạn ) khi đó ta sẽ hiển thị thông báo là Unit đã hoàn thành.  
  
 ## V. Tài liệu tham khảo
 1.	[https://phaser.io/](https://phaser.io/)
@@ -548,5 +548,5 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 4.	[http://jquery.com/](http://jquery.com/)
 
 ## VI. Demo
-	Link demo game : [https://elearning-gamecom.000webhostapp.com](https://elearning-gamecom.000webhostapp.com)
+>	Link demo game : [https://elearning-gamecom.000webhostapp.com](https://elearning-gamecom.000webhostapp.com)
 		
