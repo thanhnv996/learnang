@@ -393,145 +393,146 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 		Với mỗi hàng ngang sẽ là 1 answerSet ( 1 bộ câu trả lời ) và ta có 4 bộ câu câu trả lời  . 
 		Số bộ trả lời còn tùy thuộc vào số từ của câu trả lời đúng : .
 		Và code của trình tự này là : 
+		```javascript
+		set =sets[countSet];
+	    alt1 = set.alt1;	alt1 = alt1.split(" "); 
+	    alt2 = set.alt2;	alt2 = alt2.split(" ");
+	    alt3 = set.alt3;	alt3 = alt3.split(" ");
+	    alt4 = set.alt4;	alt4 = alt4.split(" ");
+	    line = set.line;	line = line.split(" ");
+	    lengthAnswerSet = line.length;
 
-			set =sets[countSet];
-		    alt1 = set.alt1;	alt1 = alt1.split(" "); 
-		    alt2 = set.alt2;	alt2 = alt2.split(" ");
-		    alt3 = set.alt3;	alt3 = alt3.split(" ");
-		    alt4 = set.alt4;	alt4 = alt4.split(" ");
-		    line = set.line;	line = line.split(" ");
-		    lengthAnswerSet = line.length;
-
-		    updateAnswerInBox(game,lengthAnswerSet);
-		    
-		    for( i = 0 ; i < line.length ; i++){
-		    	answerSet[i] = new Array();
-		    	if ( alt1[i]!=='_')	answerSet[i].push(alt1[i]) ; 
-		    	if ( alt2[i]!=='_')	answerSet[i].push(alt2[i]) ; 
-		    	if ( alt3[i]!=='_')	answerSet[i].push(alt3[i]) ; 
-		    	if ( alt4[i]!=='_')	answerSet[i].push(alt4[i]) ; 
-		    	answerSet[i].push(line[i]) ; 
-		    	answerSet[i] = shuffle(answerSet[i]);
-		    }
-
+	    updateAnswerInBox(game,lengthAnswerSet);
+	    
+	    for( i = 0 ; i < line.length ; i++){
+	    	answerSet[i] = new Array();
+	    	if ( alt1[i]!=='_')	answerSet[i].push(alt1[i]) ; 
+	    	if ( alt2[i]!=='_')	answerSet[i].push(alt2[i]) ; 
+	    	if ( alt3[i]!=='_')	answerSet[i].push(alt3[i]) ; 
+	    	if ( alt4[i]!=='_')	answerSet[i].push(alt4[i]) ; 
+	    	answerSet[i].push(line[i]) ; 
+	    	answerSet[i] = shuffle(answerSet[i]);
+	    }
+		```
 	* Và bây giờ ta chỉ cần thêm các bộ câu trả lời vào các button. Trước hết ta thêm bộ câu trả lời đầu tiên vào button ( countAnswerSet = 0 ) 
 		```javascript
-			 var width = 0 ; 
-			    for( j = 0 ; j< answerSet[countAnswerSet].length ; j++){
-			    	width += 50;
-			    	width += answerSet[countAnswerSet][j].length*16 ; 
-			    }
+		var width = 0 ; 
+		    for( j = 0 ; j< answerSet[countAnswerSet].length ; j++){
+		    	width += 50;
+		    	width += answerSet[countAnswerSet][j].length*16 ; 
+		    }
 	
-			    x_first =  (1100 - width)/2;
+		    x_first =  (1100 - width)/2;
 	
-			    for( j = 0 ; j< 5 ; j++){
-			    	if(answerSet[countAnswerSet][j]){
-			    		createButton(game,answerSet[countAnswerSet][j],line[countAnswerSet],x_first,game.world.centerY+50,answerSet[countAnswerSet][j].length*16,50,function(){});
-			    		x_first += 50 ;
-			    		x_first += answerSet[countAnswerSet][j].length*16;
-			    	}
-			    	
-			    }
+		    for( j = 0 ; j< 5 ; j++){
+		    	if(answerSet[countAnswerSet][j]){
+		    		createButton(game,answerSet[countAnswerSet][j],line[countAnswerSet],x_first,game.world.centerY+50,answerSet[countAnswerSet][j].length*16,50,function(){});
+		    		x_first += 50 ;
+		    		x_first += answerSet[countAnswerSet][j].length*16;
+		    	}	    	
+	    }
 		```
 	* createButton()
+		```javascript
 
-				function createButton(game,string,answer,x,y,w,h,callback){
-					......
-				
-					button1.events.onInputDown.add(checkAnswer, 
-						{game:game,textClick:string , answer:answer , button : button1 , txt :txt ,groupButton1:groupButton1});
-				}
-
-		 Khi click vào button sẽ gọi đến hàm checkAnswer để kiếm tra đáp án trong button có đúng hay không .Ta cần truyển thêm tham số cho hàm checkAnswer , quan trọng nhất là textClick (text hiển thị trên button) và answer(câu trả lời chính xác) . 
-	* checkAnswer()
+			function createButton(game,string,answer,x,y,w,h,callback){
+				......
 			
-		 	function checkAnswer(items){
-				// alert(this.textClick+'	'+this.answer);
-				if(this.textClick === this.answer){
-			
-					graphics.beginFill(0x00FF00, 1);
-					graphics.drawCircle(500, 450, 75);
-					this.game.time.events.add(1000, function() {    
-						graphics.beginFill(0xFFFFFF, 1);
-						graphics.drawCircle(500, 450, 75);
-					}, this);
-			
-					imgSuggest.kill();
-					this.button.kill();
-					this.txt.kill();
-					this.groupButton1.removeAll(false,false);
-			
-					countCorrect++;
-					txtCountCorrect.text = countCorrect;
-			
-					nextAnswerSet(this.game);
-				}else{
-					graphics.beginFill(0xFF0000, 1);
-					graphics.drawCircle(500, 450, 75);
-					this.game.time.events.add(1000, function() {    
-						graphics.beginFill(0xFFFFFF, 1);
-						graphics.drawCircle(500, 450, 75);
-					}, this);
-			
-					items.kill();
-					this.button.kill();
-					this.txt.kill();
-			
-					countWrong++;
-					txtCountWrong.text = countWrong;
-				}
+				button1.events.onInputDown.add(checkAnswer, 
+					{game:game,textClick:string , answer:answer , button : button1 , txt :txt ,groupButton1:groupButton1});
 			}
+
+	 Khi click vào button sẽ gọi đến hàm checkAnswer để kiếm tra đáp án trong button có đúng hay không .Ta cần truyển thêm tham số cho hàm checkAnswer , quan trọng nhất là textClick (text hiển thị trên button) và answer(câu trả lời chính xác) . 
+* checkAnswer()
+		
+	 	function checkAnswer(items){
+			// alert(this.textClick+'	'+this.answer);
+			if(this.textClick === this.answer){
+		
+				graphics.beginFill(0x00FF00, 1);
+				graphics.drawCircle(500, 450, 75);
+				this.game.time.events.add(1000, function() {    
+					graphics.beginFill(0xFFFFFF, 1);
+					graphics.drawCircle(500, 450, 75);
+				}, this);
+		
+				imgSuggest.kill();
+				this.button.kill();
+				this.txt.kill();
+				this.groupButton1.removeAll(false,false);
+		
+				countCorrect++;
+				txtCountCorrect.text = countCorrect;
+		
+				nextAnswerSet(this.game);
+			}else{
+				graphics.beginFill(0xFF0000, 1);
+				graphics.drawCircle(500, 450, 75);
+				this.game.time.events.add(1000, function() {    
+					graphics.beginFill(0xFFFFFF, 1);
+					graphics.drawCircle(500, 450, 75);
+				}, this);
+		
+				items.kill();
+				this.button.kill();
+				this.txt.kill();
+		
+				countWrong++;
+				txtCountWrong.text = countWrong;
+			}
+		}
+		```
 		Sau khi callback của button được gọi nó sẽ truyền param textClick(text-đáp án lựa chọn) và answer(text-đáp án chính xác). Ta sẽ kiểm tra đáp án lựa chọn có là chính xác không. 
 		Nếu sai ta sử dụng graphic ( đồ họa trong Phaser ) để hiển thị hiệu ứng chọn sai hủy button(đáp án) đó, tăng câu sai thêm 1 . 
 		Còn nếu đúng ta sử dụng graphic ( đồ họa trong Phaser ) để hiển thị hiệu ứng chính xác ,hủy groupButton ( danh sách các button đáp án ) , hủy text , tăng số đáp án chính xác lên 1 và quan trọng nhất là chạy hàm nextAnswerSet() .
 	* nextAnswerSet()
-
-		 	function nextAnswerSet(game) {
-				countAnswerSet++;
-				if(countAnswerSet<lengthAnswerSet){
-					imgSuggest = game.add.sprite(game.world.centerX-50,20,unitClick);
-					...
-			
-				    set =sets[countSet];
-				    ....
-			
+		```javascript
+	 	function nextAnswerSet(game) {
+			countAnswerSet++;
+			if(countAnswerSet<lengthAnswerSet){
+				imgSuggest = game.add.sprite(game.world.centerX-50,20,unitClick);
+				...
+		
+			    set =sets[countSet];
+			    ....
+		
+			    for( i = 0 ; i < line.length ; i++){
+			    	answerSet[i] = new Array();
+			    	...
+			    }
+		
+			    for( j = 0 ; j< 5 ; j++){
+			    	if(answerSet[countAnswerSet][j]){
+			    		createButton(game,answerSet[countAnswerSet][j],line[countAnswerSet],x_first,game.world.centerY+50,answerSet[countAnswerSet][j].length*16,50,function(){});
+			    	}
+			    }
+			}else{
+				countAnswerSet=0; countSet++;
+				if(countSet<20){
+					answerinBox = ['...','...','...','...','...'];
+					updateAnswerInBox(game,lengthAnswerSet);
+		
+					imgSuggest = game.add.sprite(game.world.centerX-50,20,unitClick); ... 
+		
+				    set =sets[countSet]; ...
+				    
 				    for( i = 0 ; i < line.length ; i++){
 				    	answerSet[i] = new Array();
-				    	...
 				    }
-			
+		
 				    for( j = 0 ; j< 5 ; j++){
 				    	if(answerSet[countAnswerSet][j]){
 				    		createButton(game,answerSet[countAnswerSet][j],line[countAnswerSet],x_first,game.world.centerY+50,answerSet[countAnswerSet][j].length*16,50,function(){});
 				    	}
 				    }
-				}else{
-					countAnswerSet=0; countSet++;
-					if(countSet<20){
-						answerinBox = ['...','...','...','...','...'];
-						updateAnswerInBox(game,lengthAnswerSet);
-			
-						imgSuggest = game.add.sprite(game.world.centerX-50,20,unitClick); ... 
-			
-					    set =sets[countSet]; ...
-					    
-					    for( i = 0 ; i < line.length ; i++){
-					    	answerSet[i] = new Array();
-					    }
-			
-					    for( j = 0 ; j< 5 ; j++){
-					    	if(answerSet[countAnswerSet][j]){
-					    		createButton(game,answerSet[countAnswerSet][j],line[countAnswerSet],x_first,game.world.centerY+50,answerSet[countAnswerSet][j].length*16,50,function(){});
-					    	}
-					    }
-					}else {
-						answerinBox = [' ','You have completed.','Thank','you! <3',' '];
-						updateAnswerInBox(game,5);
-					}
+				}else {
+					answerinBox = [' ','You have completed.','Thank','you! <3',' '];
+					updateAnswerInBox(game,5);
 				}
-				
 			}
-		
+			
+		}
+		```
 		Sau khi trả lời đúng ta sẽ tăng biến đếm bộ câu trả lời thêm 1 . Nếu bộ câu trả lời chưa vượt quá , khi đó ta reset hình ảnh gợi ý mới , button được thêm bộ câu trả lời mới và vẫn có hàm callback() đến checkAnswer và nếu checkAnswer đúng sẽ lại chạy đến hàm nextAnswerSet (đệ quy) . 
 		Nó sẽ đệ quy như thế cho đến khi biến đếm bộ câu trả lời bị vượt quá số lượng. Khi này biến countSet(đếm câu hỏi) sẽ được tăng thêm 1 đơn vị. và nó sẽ nhảy sang câu hỏi tiếp theo với danh sách bộ câu trả lời mới. 
 		Trường hợp tiếp theo là khi biến countSet bị vượt quá ( số câu hỏi là có giới hạn ) khi đó ta sẽ hiển thị thông báo là Unit đã hoàn thành.  
