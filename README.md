@@ -4,6 +4,31 @@
 * Nguyễn Văn Thành
 * Phan Công Thắng
 * Vũ Thị Thùy
+
+### Mục lục
+	I. Giới thiệu
+	II. Cài đặt
+		1. Cài đặt Server
+		2. Cài đặt Editor
+		3. Tải thư viện Phaser
+	III. Chuẩn bị dữ liệu
+		1.Cấu trúc project
+		2.Assets
+		3.Unit
+		4.Img-for-sentences
+		5.AtlanJson
+		6.Sentences
+	IV. Xây dựng game
+		1.Tạo file index.html 
+		2.Import thư viện Phaser và các file Javascript trong index.html
+		3.	Constructor game 
+		4.	Boot.js
+		5.	Preloader.js
+		6.	Welcome.js
+		7.	MainMenu.js
+		8.	Play.js
+	V. Tài liệu tham khảo
+	VI. Demo game
 ---
 ## I. Giới thiệu
 Phaser là một game framework cho desktop và mobile. Nó nhanh, miễn phí và là mã nguồn mở. Phiên bản Phaser hiện tại là 2.6.2. Nó hỗ trợ cho cả WebGL và Canvas. Nó có một loạt các tính năng giúp bạn trong việc phát triển game. 
@@ -419,6 +444,7 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 		
 		Ở đây **answerSet(bộ câu trả lời)** sẽ là 1 **mảng 2 chiều** , ta sẽ phân tích thành **1 ma trận** : 
 		 ![enter image description here](https://lh3.googleusercontent.com/-raKiYHfIJos/WiLOQbGDVoI/AAAAAAAABLE/ECJ6PA-ZZd4BFemx-bfACjuWoTaVVDoyQCLcBGAs/s0/25.png "25.png")
+		
 		Với mỗi **hàng ngang** sẽ là 1 **answerSet** ( 1 **bộ câu trả lời** ) và ta có 4 bộ câu câu trả lời  . 
 		Số bộ trả lời còn tùy thuộc vào số từ của câu trả lời đúng : ![enter image description here](https://lh3.googleusercontent.com/-mXBcZAA3Q_s/WiLOX16W0TI/AAAAAAAABLU/MjVCm196gMIQnzrOMFlfwzCgTyEdk8KpACLcBGAs/s0/26.png "26.png")
 		Và code của trình tự này là : 
