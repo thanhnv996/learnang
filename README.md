@@ -9,13 +9,10 @@
 Phaser là một game framework cho desktop và mobile. Nó nhanh, miễn phí và là mã nguồn mở. Phiên bản Phaser hiện tại là 2.6.2. Nó hỗ trợ cho cả WebGL và Canvas. Nó có một loạt các tính năng giúp bạn trong việc phát triển game. 
 ## II. Cài đặt
 **1. Cài đặt Web server.** 
-
 	Sử dụng **WAMP** Server hoặc **XAMPP** , cả hai đều có hướng dẫn cài đặt dễ dàng. Đặc biệt WAMP cài đặt một biểu tượng vào khay hệ thống của bạn, từ đó bạn có thể dừng lại và khởi động lại các dịch vụ, cũng như sửa đổi cài đặt Apache chẳng hạn như tạo một bí danh thư mục mới cho một dự án.
 **2. Cài đặt Editor**
-	
 	Sử dụng **SublimeText** hoặc Editor ưa thích.
 **3. Tải thư viện Phaser**
-
 	* Tải thư viện Phaser từ trang chủ của Phaser : [https://phaser.io ](https://phaser.io "Phaser")
 	* Giải nén file RAR download được sau đó coppy vào Project Game.
 ## III. Chuẩn bị dữ liệu
@@ -62,9 +59,9 @@ Giả sử mỗi hình ảnh là một bản đồ thì tương ứng ta có cá
 		* Y là tung độ góc trên bên trái của frame.
 		* W là width – độ rộng của frame.
 		* H là height – chiều cao của frame.
-
-Như vậy khi ta có 1 hình ảnh gồm nhiều frame và 1 AtlasJson ta sẽ  lấy được 1 danh sách các frame trong hình ảnh đó.
-6. Sentences
+	
+	Như vậy khi ta có 1 hình ảnh gồm nhiều frame và 1 AtlasJson ta sẽ  lấy được 1 danh sách các frame trong hình ảnh đó.
+6.	 Sentences
 	Gồm tập hợp các file Json , mỗi file Json là 1 chủ đề : 
 	![enter image description here](https://lh3.googleusercontent.com/-vpwsAj2G24A/WiLN4mnwSnI/AAAAAAAABKg/Sra7HfZLPe4gUeeYBXYhkdodm0N4D18qACLcBGAs/s0/7.png "7.png")
 	Hình ảnh trên là file Json về chủ đề “Time” . File này là 1 mảng các Object . Mỗi object lại là một câu hỏi :
