@@ -106,7 +106,8 @@ Như vậy khi ta có 1 hình ảnh gồm nhiều frame và 1 AtlasJson ta sẽ 
 	State|	Object|	NULL	|Đối tượng trạng thái mặc định.Đối tượng này bao gồm các chức năng Phaser.State(tải trước , tạo , cập nhật và hiển thị) hoặc có thể là NULL.|
 	|Transparent|	Boolean	|False|	Sử dụng Background Canvas trong suốt hoặc  không .|
 	Antialias	|Boolean	|True|	Vẽ tất cả các kết cấu hình ảnh chống aliased hay không. Mặc định là cho kết cấu mịn, nhưng vô hiệu hóa nếu trò chơi của bạn có tính năng pixel.|
-	PhysicsConfig|	Object	|NULL	|Một vật cấu hình đối tượng để đáp ứng mặt Vật lý thực tế.
+	PhysicsConfig|	Object	|NULL	|Một vật cấu hình đối tượng để đáp ứng mặt Vật lý thực tế.|
+
 	b. **Phaser.State**
 	> ### new State()
 	**State** là một lớp cơ sở mà có thể được mở rộng. Nó cung cấp truy cập nhanh đến các chức năng phổ biến như camera, bộ nhớ cache, đầu vào, kết hợp, âm thanh và nhiều hơn nữa.
@@ -184,6 +185,7 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 	* **Game.load.image()**
  
 		Thêm 'hình ảnh' vào Loader.
+
 		Tên|	Kiểu|	Mô tả
 		--- | --- | ---
 		key	|String|	Key của ảnh trong “game”.
@@ -193,6 +195,7 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 	* **Game.load.atlas()**
  
 		Thêm một cấu trúc Atlas mới ('textureatlas') vào Loader. Textures Atlases có thể được tạo ra bằng các công cụ như Texture Packer và Shoebox.
+
 		Tên	|Kiểu	|Mô tả
 		--- | --- | ---
 		Key	|String	|Key của file cấu trúc atlas.
@@ -205,6 +208,7 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 		Thêm một sprite sheet mới ('spritesheet') vào bộ nạp.
 		Sprite : là một thành phần không thể thiếu trong game, là một đối tượng đồ họa được vẽ lên màn hình(Screen). Có thể thao tác chúng và làm chúng di chuyển.
 		Sprite Sheet : là tập hợp nhiều các Sprite . Giúp dễ dàng quản lý file hình ảnh , làm giảm kích thước tập tin tổng thể so với từng Sprite riêng rẽ.
+
 		Tên|	Kiểu|	Mô tả
 		--- | --- | ---
 		Key|	String|	Khóa chính của file Sheet
