@@ -63,8 +63,10 @@ Bây giờ ta sẽ cần dùng **Atlasjson** để lấy các **frame** trong �
 Giả sử mỗi hình ảnh là một bản đồ thì tương ứng ta có các frame trên hình ảnh là các ngôi nhà trên bản đồ và AtlasJson chính là cuốn sổ địa chỉ mà ta cần phải có để xác định các frame:  
 		
 ![enter image description here](https://lh3.googleusercontent.com/-gXsiIPeSNdM/WiLNoyl-5PI/AAAAAAAABKQ/dbVxdZxzm4otU4arwK9kCmQ4TiVeoRBrACLcBGAs/s0/6.png "6.png")
+
 ![enter image description here](https://lh3.googleusercontent.com/-MiEtWQqj_ZY/WiLNwNgduRI/AAAAAAAABKY/-Q-o9Z2H1FoAzEgxW8la_vniqCKFpWVSACLcBGAs/s0/s_1+-+Copy.png "s_1 - Copy.png")
-	Xét Object thứ nhất (frame 1)   ta có : 
+	
+Xét Object thứ nhất (frame 1)   ta có : 
 	*	“filename” = “0” : tên File là “0”
 	*   “frame” : {x = 1 , y = 1 , w = 164 , h: 163} 
 		* X là hoành độ góc trên cùng bên trái của frame.
@@ -73,15 +75,17 @@ Giả sử mỗi hình ảnh là một bản đồ thì tương ứng ta có cá
 		* H là height – chiều cao của frame.
 	
 Như vậy khi ta có 1 hình ảnh gồm nhiều frame và 1 AtlasJson ta sẽ  lấy được 1 danh sách các frame trong hình ảnh đó.
+
 6.	 **Sentences**
 
 Gồm tập hợp các file Json , mỗi file Json là 1 chủ đề : 
 
 ![enter image description here](https://lh3.googleusercontent.com/-vpwsAj2G24A/WiLN4mnwSnI/AAAAAAAABKg/Sra7HfZLPe4gUeeYBXYhkdodm0N4D18qACLcBGAs/s0/7.png "7.png")
-	Hình ảnh trên là file Json về chủ đề “Time” . File này là 1 mảng các Object . Mỗi object lại là một câu hỏi :
-	* Line : Câu đầy đủ / chính xác . 
-	* Alt1 : Câu thứ nhất bị thiếu .
-	* Alt2 : Câu thứ 2 bị thiếu . tương tự với alt3 và alt4. 
+
+Hình ảnh trên là file Json về chủ đề “Time” . File này là 1 mảng các Object . Mỗi object lại là một câu hỏi :
+* Line : Câu đầy đủ / chính xác . 
+* Alt1 : Câu thứ nhất bị thiếu .
+* Alt2 : Câu thứ 2 bị thiếu . tương tự với alt3 và alt4. 
 
 ## IV. Xây dựng game
 1.	**Tạo file index.html trong Project game**
