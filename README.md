@@ -245,7 +245,7 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 	Sau khi nạp xong các thành phần vào Loader. Hàm create sẽ chuyển state sang state Welcome
 
 	
-**6.	Welcome.js**
+6.	**Welcome.js**
 	 ```javascript
 	Game.Welcome = function(game){
 	};
@@ -294,7 +294,7 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 	Lấy vị trí Y tương ứng với điểm trung tâm của **world**.
 	*	Khi tạo xong các button đã được custom cho trò chơi . Khi click vào button “**Play**” hàm **callback** sẽ được gọi và state chuyển thành **MainMenu.**
 
-**7.	MainMenu.js**
+7.	**MainMenu.js**
 
  	```javascript
 	Game.MainMenu = function(game){
@@ -571,5 +571,5 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 4.	[http://jquery.com/](http://jquery.com/)
 
 ## VI. Demo
->	Link demo game : [https://elearning-gamecom.000webhostapp.com](https://elearning-gamecom.000webhostapp.com)
+>	Link demo game : [https://elearning-gamecom.000webhostapp.com](https://elearning-gamecom.000webhostapp.com) - server free nên hơi chậm cần phải chờ đợi một lúc , mong các bạn thông cảm :))
 		
