@@ -459,7 +459,7 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 		    	}	    	
 	    }
 		```
-	*** createButton()**
+	* **createButton()**
 		```javascript
 
 			function createButton(game,string,answer,x,y,w,h,callback){
@@ -470,7 +470,7 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 			}
 
 	 Khi click vào button sẽ gọi đến hàm checkAnswer để kiếm tra đáp án trong button có đúng hay không .Ta cần truyển thêm tham số cho hàm **checkAnswer** , quan trọng nhất là **textClick** (text hiển thị trên button) và **answer**(câu trả lời chính xác) . 
-*** checkAnswer()**
+	* **checkAnswer()**
 		```javascript
 	 	function checkAnswer(items){
 			// alert(this.textClick+'	'+this.answer);
