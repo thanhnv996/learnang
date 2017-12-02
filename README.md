@@ -33,14 +33,13 @@ Sử dụng **SublimeText** hoặc Editor ưa thích.
 
 	Danh sách hình ảnh về các chủ đề
 
-![enter image description here](https://lh3.googleusercontent.com/-WO5drSlzTKs/WiLNRqFQCCI/AAAAAAAABJs/2i_LxBtUtaQ5ok_HXxj9T7F-eJ0C5BS5gCLcBGAs/s0/3.png "3.png")
+	![enter image description here](https://lh3.googleusercontent.com/-WO5drSlzTKs/WiLNRqFQCCI/AAAAAAAABJs/2i_LxBtUtaQ5ok_HXxj9T7F-eJ0C5BS5gCLcBGAs/s0/3.png "3.png")
 
 4. **Img-for-sentences**
 
 	Danh sách các hình ảnh cho mỗi chủ đề
-	 
-	 
-![enter image description here](https://lh3.googleusercontent.com/-cK3RU3pDZQI/WiLNX_fcrqI/AAAAAAAABJ0/HcB6UbogsSkUe5P_IhzbYWDJflZSrhelgCLcBGAs/s0/4.png "4.png")
+		 			 
+	![enter image description here](https://lh3.googleusercontent.com/-cK3RU3pDZQI/WiLNX_fcrqI/AAAAAAAABJ0/HcB6UbogsSkUe5P_IhzbYWDJflZSrhelgCLcBGAs/s0/4.png "4.png")
 	 
 	 
 * Với chủ đề “Time”(hình ảnh “1” trong “unit” ) ta sẽ có hình ảnh s_1 (trong “img-for-sentences”) tương ứng. Trong s_1 lại là danh sách các hình ảnh liên quan đến các câu hỏi về thời gian. 
@@ -65,20 +64,20 @@ Bây giờ ta sẽ cần dùng **Atlasjson** để lấy các **frame** trong �
 	b.	**AtlasJson là gì ?** 
 
 	Nếu Atlas giống như 1 tấm bản đồ thì ta có thể coi AtlasJson giống như 1 cuốn sổ ghi lại các địa chỉ của các nhà :
-Giả sử mỗi hình ảnh là một bản đồ thì tương ứng ta có các frame trên hình ảnh là các ngôi nhà trên bản đồ và AtlasJson chính là cuốn sổ địa chỉ mà ta cần phải có để xác định các frame:  
+	Giả sử mỗi hình ảnh là một bản đồ thì tương ứng ta có các frame trên hình ảnh là các ngôi nhà trên bản đồ và AtlasJson chính là cuốn sổ địa chỉ mà ta cần phải có để xác định các frame:  
+			
+	![enter image description here](https://lh3.googleusercontent.com/-gXsiIPeSNdM/WiLNoyl-5PI/AAAAAAAABKQ/dbVxdZxzm4otU4arwK9kCmQ4TiVeoRBrACLcBGAs/s0/6.png "6.png")
+	![enter image description here](https://lh3.googleusercontent.com/-MiEtWQqj_ZY/WiLNwNgduRI/AAAAAAAABKY/-Q-o9Z2H1FoAzEgxW8la_vniqCKFpWVSACLcBGAs/s0/s_1+-+Copy.png "s_1 - Copy.png")
 		
-![enter image description here](https://lh3.googleusercontent.com/-gXsiIPeSNdM/WiLNoyl-5PI/AAAAAAAABKQ/dbVxdZxzm4otU4arwK9kCmQ4TiVeoRBrACLcBGAs/s0/6.png "6.png")
-![enter image description here](https://lh3.googleusercontent.com/-MiEtWQqj_ZY/WiLNwNgduRI/AAAAAAAABKY/-Q-o9Z2H1FoAzEgxW8la_vniqCKFpWVSACLcBGAs/s0/s_1+-+Copy.png "s_1 - Copy.png")
-	
-Xét Object thứ nhất (frame 1)   ta có : 
+	Xét Object thứ nhất (frame 1)   ta có : 
 	*	“filename” = “0” : tên File là “0”
 	*   “frame” : {x = 1 , y = 1 , w = 164 , h: 163} 
 		* X là hoành độ góc trên cùng bên trái của frame.
 		* Y là tung độ góc trên bên trái của frame.
 		* W là width – độ rộng của frame.
 		* H là height – chiều cao của frame.
-	
-Như vậy khi ta có 1 hình ảnh gồm nhiều frame và 1 AtlasJson ta sẽ  lấy được 1 danh sách các frame trong hình ảnh đó.
+		
+	Như vậy khi ta có 1 hình ảnh gồm nhiều frame và 1 AtlasJson ta sẽ  lấy được 1 danh sách các frame trong hình ảnh đó.
 
 6.	 **Sentences**
 
