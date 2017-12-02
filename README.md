@@ -218,8 +218,8 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 	Sau khi nạp xong các thành phần vào Loader. Hàm create sẽ chuyển state sang state Welcome
 
 	
-**6.	Welcome.js**
- 	```javascript
+6.	Welcome.js
+	 ```javascript
 	Game.Welcome = function(game){
 	};
 	Game.Welcome.prototype = {
@@ -252,21 +252,23 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 		}
 	}
 	```
-	*	Tạo hàm **createButton** để custom button, gồm các params :  
-		*	**Game** : Trò chơi được khởi tạo của chúng ta .
-		*	**String** : Value của button .
-		*	**X** : vị trí X .
-		*	**Y** : vị trí Y.
-		*	**W** : chiều rộng button.
-		*	**H** : chiều cao button.
-		*	**Callback** : hàm được gọi khi click vào button.
-	*	**Game.world** : Một trò chơi chỉ có một **world**. **World** là một nơi trừu tượng trong đó tất cả các đối tượng trò chơi sống. Nó không bị ràng buộc bởi các giới hạn **stage** và có thể được bất kỳ kích thước. Bạn nhìn vào **world** thông qua máy ảnh. Tất cả các đối tượng trò chơi sống trong thế giới ở các tọa độ trên **world**. Theo mặc định, **world** được tạo cùng kích thước với **Stage**. 
-	*	**Game.world.centerX** : 
-Lấy vị trí **X** tương ứng với điểm trung tâm của **world**.
-	*	**Game.world.centerY** : 
-Lấy vị trí **Y** tương ứng với điểm trung tâm của **world**.
-	*	Khi tạo xong các button đã được custom cho trò chơi . Khi click vào button “**Play**” hàm **callback** sẽ được gọi và state chuyển thành **MainMenu**.
-**7.	MainMenu.js**
+	*	Tạo hàm createButton để custom button, gồm các params :  
+		*	Game : Trò chơi được khởi tạo của chúng ta .
+		*	String : Value của button .
+		*	X : vị trí X .
+		*	Y : vị trí Y.
+		*	W : chiều rộng button.
+		*	H : chiều cao button.
+		*	Callback : hàm được gọi khi click vào button.
+	*	Game.world : Một trò chơi chỉ có một world. World là một nơi trừu tượng trong đó tất cả các đối tượng trò chơi sống. Nó không bị ràng buộc bởi các giới hạn stage và có thể được bất kỳ kích thước. Bạn nhìn vào world thông qua máy ảnh. Tất cả các đối tượng trò chơi sống trong thế giới ở các tọa độ trên world. Theo mặc định, world được tạo cùng kích thước với Stage của bạn. 
+	*	Game.world.centerX : 
+	Lấy vị trí X tương ứng với điểm trung tâm của world.
+	*	Game.world.centerY : 
+	Lấy vị trí Y tương ứng với điểm trung tâm của world.
+	*	Khi tạo xong các button đã được custom cho trò chơi . Khi click vào button “Play” hàm callback sẽ được gọi và state chuyển thành MainMenu.
+
+7.	MainMenu.js
+
  	```javascript
 	Game.MainMenu = function(game){
 	};
