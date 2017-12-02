@@ -20,14 +20,18 @@ Phaser là một game framework cho desktop và mobile. Nó nhanh, miễn phí v
 	* Giải nén file RAR download được sau đó coppy vào Project Game.
 ## III. Chuẩn bị dữ liệu
 1. **Cấu trúc Project**
+	![enter image description here](https://lh3.googleusercontent.com/-61zkk5mArUU/WiLNFbyMLzI/AAAAAAAABJk/aCeWxVF9qe4MGc0FRzArfhpL97zXA30MACLcBGAs/s0/2.png "2.png")
 2. **Assets**
+ Nơi lưu trữ các hình ảnh của Project, ví dụ : Background , button , …
 3. **Unit**
+	Danh sách hình ảnh về các chủ đề
+	![enter image description here](https://lh3.googleusercontent.com/-WO5drSlzTKs/WiLNRqFQCCI/AAAAAAAABJs/2i_LxBtUtaQ5ok_HXxj9T7F-eJ0C5BS5gCLcBGAs/s0/3.png "3.png")
 4. **Img-for-sentences**
 
 	Danh sách các hình ảnh cho mỗi chủ đề
- 
+	 ![enter image description here](https://lh3.googleusercontent.com/-cK3RU3pDZQI/WiLNX_fcrqI/AAAAAAAABJ0/HcB6UbogsSkUe5P_IhzbYWDJflZSrhelgCLcBGAs/s0/4.png "4.png")
 	Với chủ đề “Time”(hình ảnh “1” trong “unit” ) ta sẽ có hình ảnh s_1 (trong “img-for-sentences”) tương ứng. Trong s_1 lại là danh sách các hình ảnh liên quan đến các câu hỏi về thời gian. 
- 
+	 ![enter image description here](https://lh3.googleusercontent.com/-l9zZ1tl_w04/WiLNh21D3oI/AAAAAAAABKE/ZoqoBbfYVrU_LuNlOhrnRh8AaPSONeBYwCLcBGAs/s0/s_1.png "s_1.png")
 
 5.	**Atlasjson**
 	
@@ -49,7 +53,8 @@ Bây giờ ta sẽ cần dùng **Atlasjson** để lấy các **frame** trong �
 
 	Nếu Atlas giống như 1 tấm bản đồ thì ta có thể coi AtlasJson giống như 1 cuốn sổ ghi lại các địa chỉ của các nhà :
 Giả sử mỗi hình ảnh là một bản đồ thì tương ứng ta có các frame trên hình ảnh là các ngôi nhà trên bản đồ và AtlasJson chính là cuốn sổ địa chỉ mà ta cần phải có để xác định các frame:  
-
+		![enter image description here](https://lh3.googleusercontent.com/-gXsiIPeSNdM/WiLNoyl-5PI/AAAAAAAABKQ/dbVxdZxzm4otU4arwK9kCmQ4TiVeoRBrACLcBGAs/s0/6.png "6.png")
+		![enter image description here](https://lh3.googleusercontent.com/-MiEtWQqj_ZY/WiLNwNgduRI/AAAAAAAABKY/-Q-o9Z2H1FoAzEgxW8la_vniqCKFpWVSACLcBGAs/s0/s_1+-+Copy.png "s_1 - Copy.png")
 	Xét Object thứ nhất (frame 1)   ta có : 
 	*	“filename” = “0” : tên File là “0”
 	*   “frame” : {x = 1 , y = 1 , w = 164 , h: 163} 
@@ -60,8 +65,8 @@ Giả sử mỗi hình ảnh là một bản đồ thì tương ứng ta có cá
 
 Như vậy khi ta có 1 hình ảnh gồm nhiều frame và 1 AtlasJson ta sẽ  lấy được 1 danh sách các frame trong hình ảnh đó.
 6. Sentences
-
 	Gồm tập hợp các file Json , mỗi file Json là 1 chủ đề : 
+	![enter image description here](https://lh3.googleusercontent.com/-vpwsAj2G24A/WiLN4mnwSnI/AAAAAAAABKg/Sra7HfZLPe4gUeeYBXYhkdodm0N4D18qACLcBGAs/s0/7.png "7.png")
 	Hình ảnh trên là file Json về chủ đề “Time” . File này là 1 mảng các Object . Mỗi object lại là một câu hỏi :
 	* Line : Câu đầy đủ / chính xác . 
 	* Alt1 : Câu thứ nhất bị thiếu .
@@ -389,13 +394,13 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 	    imgSuggest.input.pixelPerfectClick = true;
 		```
 	*	Phân tích **JSON Sentences** , tạo các bộ câu trả lời . Ban đầu **countSet  = 0** , tức là ta đang lấy **câu đầu tiên** trong **bộ câu hỏi (sets).** 
- 
+		 ![enter image description here](https://lh3.googleusercontent.com/-9xYaC9OgTwM/WiLOE4FxPDI/AAAAAAAABKs/tB7P2gXF7Kgwcn2KYsW-rWhSl7zCBIq5ACLcBGAs/s0/23.png "23.png")
 		||
-
+![enter image description here](https://lh3.googleusercontent.com/-H6JaM_JlGXM/WiLOKmXXhbI/AAAAAAAABK8/4er0mOgqK8M8SD59_M6Q-hjcwV8MGVmswCLcBGAs/s0/24.png "24.png")
 		Ở đây **answerSet(bộ câu trả lời)** sẽ là 1 **mảng 2 chiều** , ta sẽ phân tích thành **1 ma trận** : 
- 
+		 ![enter image description here](https://lh3.googleusercontent.com/-raKiYHfIJos/WiLOQbGDVoI/AAAAAAAABLE/ECJ6PA-ZZd4BFemx-bfACjuWoTaVVDoyQCLcBGAs/s0/25.png "25.png")
 		Với mỗi **hàng ngang** sẽ là 1 **answerSet** ( 1 **bộ câu trả lời** ) và ta có 4 bộ câu câu trả lời  . 
-		Số bộ trả lời còn tùy thuộc vào số từ của câu trả lời đúng : .
+		Số bộ trả lời còn tùy thuộc vào số từ của câu trả lời đúng : ![enter image description here](https://lh3.googleusercontent.com/-mXBcZAA3Q_s/WiLOX16W0TI/AAAAAAAABLU/MjVCm196gMIQnzrOMFlfwzCgTyEdk8KpACLcBGAs/s0/26.png "26.png")
 		Và code của trình tự này là : 
 		```javascript
 		set =sets[countSet];
