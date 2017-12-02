@@ -8,27 +8,32 @@
 ## I. Giới thiệu
 Phaser là một game framework cho desktop và mobile. Nó nhanh, miễn phí và là mã nguồn mở. Phiên bản Phaser hiện tại là 2.6.2. Nó hỗ trợ cho cả WebGL và Canvas. Nó có một loạt các tính năng giúp bạn trong việc phát triển game. 
 ## II. Cài đặt
+
 **1. Cài đặt Web server.** 
 	Sử dụng **WAMP** Server hoặc **XAMPP** , cả hai đều có hướng dẫn cài đặt dễ dàng. Đặc biệt WAMP cài đặt một biểu tượng vào khay hệ thống của bạn, từ đó bạn có thể dừng lại và khởi động lại các dịch vụ, cũng như sửa đổi cài đặt Apache chẳng hạn như tạo một bí danh thư mục mới cho một dự án.
+	
 **2. Cài đặt Editor**
 	Sử dụng **SublimeText** hoặc Editor ưa thích.
+	
 **3. Tải thư viện Phaser**
 	* Tải thư viện Phaser từ trang chủ của Phaser : [https://phaser.io ](https://phaser.io "Phaser")
 	* Giải nén file RAR download được sau đó coppy vào Project Game.
 ## III. Chuẩn bị dữ liệu
 1. **Cấu trúc Project**
+	
 	![enter image description here](https://lh3.googleusercontent.com/-61zkk5mArUU/WiLNFbyMLzI/AAAAAAAABJk/aCeWxVF9qe4MGc0FRzArfhpL97zXA30MACLcBGAs/s0/2.png "2.png")
 2. **Assets**
  Nơi lưu trữ các hình ảnh của Project, ví dụ : Background , button , …
 3. **Unit**
 	Danh sách hình ảnh về các chủ đề
-	![enter image description here](https://lh3.googleusercontent.com/-WO5drSlzTKs/WiLNRqFQCCI/AAAAAAAABJs/2i_LxBtUtaQ5ok_HXxj9T7F-eJ0C5BS5gCLcBGAs/s0/3.png "3.png")
+![enter image description here](https://lh3.googleusercontent.com/-WO5drSlzTKs/WiLNRqFQCCI/AAAAAAAABJs/2i_LxBtUtaQ5ok_HXxj9T7F-eJ0C5BS5gCLcBGAs/s0/3.png "3.png")
 4. **Img-for-sentences**
 
 	Danh sách các hình ảnh cho mỗi chủ đề
+	 
 	 ![enter image description here](https://lh3.googleusercontent.com/-cK3RU3pDZQI/WiLNX_fcrqI/AAAAAAAABJ0/HcB6UbogsSkUe5P_IhzbYWDJflZSrhelgCLcBGAs/s0/4.png "4.png")
 	Với chủ đề “Time”(hình ảnh “1” trong “unit” ) ta sẽ có hình ảnh s_1 (trong “img-for-sentences”) tương ứng. Trong s_1 lại là danh sách các hình ảnh liên quan đến các câu hỏi về thời gian. 
-	 ![enter image description here](https://lh3.googleusercontent.com/-l9zZ1tl_w04/WiLNh21D3oI/AAAAAAAABKE/ZoqoBbfYVrU_LuNlOhrnRh8AaPSONeBYwCLcBGAs/s0/s_1.png "s_1.png")
+![enter image description here](https://lh3.googleusercontent.com/-l9zZ1tl_w04/WiLNh21D3oI/AAAAAAAABKE/ZoqoBbfYVrU_LuNlOhrnRh8AaPSONeBYwCLcBGAs/s0/s_1.png "s_1.png")
 
 5.	**Atlasjson**
 	
@@ -50,8 +55,9 @@ Bây giờ ta sẽ cần dùng **Atlasjson** để lấy các **frame** trong �
 
 	Nếu Atlas giống như 1 tấm bản đồ thì ta có thể coi AtlasJson giống như 1 cuốn sổ ghi lại các địa chỉ của các nhà :
 Giả sử mỗi hình ảnh là một bản đồ thì tương ứng ta có các frame trên hình ảnh là các ngôi nhà trên bản đồ và AtlasJson chính là cuốn sổ địa chỉ mà ta cần phải có để xác định các frame:  
-		![enter image description here](https://lh3.googleusercontent.com/-gXsiIPeSNdM/WiLNoyl-5PI/AAAAAAAABKQ/dbVxdZxzm4otU4arwK9kCmQ4TiVeoRBrACLcBGAs/s0/6.png "6.png")
-		![enter image description here](https://lh3.googleusercontent.com/-MiEtWQqj_ZY/WiLNwNgduRI/AAAAAAAABKY/-Q-o9Z2H1FoAzEgxW8la_vniqCKFpWVSACLcBGAs/s0/s_1+-+Copy.png "s_1 - Copy.png")
+		
+![enter image description here](https://lh3.googleusercontent.com/-gXsiIPeSNdM/WiLNoyl-5PI/AAAAAAAABKQ/dbVxdZxzm4otU4arwK9kCmQ4TiVeoRBrACLcBGAs/s0/6.png "6.png")
+![enter image description here](https://lh3.googleusercontent.com/-MiEtWQqj_ZY/WiLNwNgduRI/AAAAAAAABKY/-Q-o9Z2H1FoAzEgxW8la_vniqCKFpWVSACLcBGAs/s0/s_1+-+Copy.png "s_1 - Copy.png")
 	Xét Object thứ nhất (frame 1)   ta có : 
 	*	“filename” = “0” : tên File là “0”
 	*   “frame” : {x = 1 , y = 1 , w = 164 , h: 163} 
@@ -63,6 +69,7 @@ Giả sử mỗi hình ảnh là một bản đồ thì tương ứng ta có cá
 	Như vậy khi ta có 1 hình ảnh gồm nhiều frame và 1 AtlasJson ta sẽ  lấy được 1 danh sách các frame trong hình ảnh đó.
 6.	 Sentences
 	Gồm tập hợp các file Json , mỗi file Json là 1 chủ đề : 
+	
 	![enter image description here](https://lh3.googleusercontent.com/-vpwsAj2G24A/WiLN4mnwSnI/AAAAAAAABKg/Sra7HfZLPe4gUeeYBXYhkdodm0N4D18qACLcBGAs/s0/7.png "7.png")
 	Hình ảnh trên là file Json về chủ đề “Time” . File này là 1 mảng các Object . Mỗi object lại là một câu hỏi :
 	* Line : Câu đầy đủ / chính xác . 
@@ -72,7 +79,7 @@ Giả sử mỗi hình ảnh là một bản đồ thì tương ứng ta có cá
 ## IV. Xây dựng game
 1.	**Tạo file index.html trong Project game**
 2.	**Import thư viện Phaser và các file Javascript trong index.html**
-	```
+	```javascript
 	<script type="text/javascript" src='phaser.min.js'></script>
 	<script type="text/javascript" src='Boot.js'></script>
 	<script type="text/javascript" src='Preloader.js'></script>
