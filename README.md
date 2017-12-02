@@ -412,9 +412,11 @@ Về cơ bản , khi chúng ta chia một trò chơi thành “blocks” , ví d
 	    imgSuggest.input.pixelPerfectClick = true;
 		```
 	*	Phân tích **JSON Sentences** , tạo các bộ câu trả lời . Ban đầu **countSet  = 0** , tức là ta đang lấy **câu đầu tiên** trong **bộ câu hỏi (sets).** 
-		 ![enter image description here](https://lh3.googleusercontent.com/-9xYaC9OgTwM/WiLOE4FxPDI/AAAAAAAABKs/tB7P2gXF7Kgwcn2KYsW-rWhSl7zCBIq5ACLcBGAs/s0/23.png "23.png")
+		 
+		![enter image description here](https://lh3.googleusercontent.com/-9xYaC9OgTwM/WiLOE4FxPDI/AAAAAAAABKs/tB7P2gXF7Kgwcn2KYsW-rWhSl7zCBIq5ACLcBGAs/s0/23.png "23.png")
 		||
 ![enter image description here](https://lh3.googleusercontent.com/-H6JaM_JlGXM/WiLOKmXXhbI/AAAAAAAABK8/4er0mOgqK8M8SD59_M6Q-hjcwV8MGVmswCLcBGAs/s0/24.png "24.png")
+		
 		Ở đây **answerSet(bộ câu trả lời)** sẽ là 1 **mảng 2 chiều** , ta sẽ phân tích thành **1 ma trận** : 
 		 ![enter image description here](https://lh3.googleusercontent.com/-raKiYHfIJos/WiLOQbGDVoI/AAAAAAAABLE/ECJ6PA-ZZd4BFemx-bfACjuWoTaVVDoyQCLcBGAs/s0/25.png "25.png")
 		Với mỗi **hàng ngang** sẽ là 1 **answerSet** ( 1 **bộ câu trả lời** ) và ta có 4 bộ câu câu trả lời  . 
