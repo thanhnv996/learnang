@@ -27,18 +27,23 @@ Sử dụng **SublimeText** hoặc Editor ưa thích.
 	
 	![enter image description here](https://lh3.googleusercontent.com/-61zkk5mArUU/WiLNFbyMLzI/AAAAAAAABJk/aCeWxVF9qe4MGc0FRzArfhpL97zXA30MACLcBGAs/s0/2.png "2.png")
 2. **Assets**
- Nơi lưu trữ các hình ảnh của Project, ví dụ : Background , button , …
+ 
+	Nơi lưu trữ các hình ảnh của Project, ví dụ : Background , button , …
 3. **Unit**
+
 	Danh sách hình ảnh về các chủ đề
+
 ![enter image description here](https://lh3.googleusercontent.com/-WO5drSlzTKs/WiLNRqFQCCI/AAAAAAAABJs/2i_LxBtUtaQ5ok_HXxj9T7F-eJ0C5BS5gCLcBGAs/s0/3.png "3.png")
 
 4. **Img-for-sentences**
 
 	Danh sách các hình ảnh cho mỗi chủ đề
 	 
-	 ![enter image description here](https://lh3.googleusercontent.com/-cK3RU3pDZQI/WiLNX_fcrqI/AAAAAAAABJ0/HcB6UbogsSkUe5P_IhzbYWDJflZSrhelgCLcBGAs/s0/4.png "4.png")
 	 
-	Với chủ đề “Time”(hình ảnh “1” trong “unit” ) ta sẽ có hình ảnh s_1 (trong “img-for-sentences”) tương ứng. Trong s_1 lại là danh sách các hình ảnh liên quan đến các câu hỏi về thời gian. 
+![enter image description here](https://lh3.googleusercontent.com/-cK3RU3pDZQI/WiLNX_fcrqI/AAAAAAAABJ0/HcB6UbogsSkUe5P_IhzbYWDJflZSrhelgCLcBGAs/s0/4.png "4.png")
+	 
+	 
+* Với chủ đề “Time”(hình ảnh “1” trong “unit” ) ta sẽ có hình ảnh s_1 (trong “img-for-sentences”) tương ứng. Trong s_1 lại là danh sách các hình ảnh liên quan đến các câu hỏi về thời gian. 
 ![enter image description here](https://lh3.googleusercontent.com/-l9zZ1tl_w04/WiLNh21D3oI/AAAAAAAABKE/ZoqoBbfYVrU_LuNlOhrnRh8AaPSONeBYwCLcBGAs/s0/s_1.png "s_1.png")
 
 5.	**Atlasjson**
@@ -63,7 +68,6 @@ Bây giờ ta sẽ cần dùng **Atlasjson** để lấy các **frame** trong �
 Giả sử mỗi hình ảnh là một bản đồ thì tương ứng ta có các frame trên hình ảnh là các ngôi nhà trên bản đồ và AtlasJson chính là cuốn sổ địa chỉ mà ta cần phải có để xác định các frame:  
 		
 ![enter image description here](https://lh3.googleusercontent.com/-gXsiIPeSNdM/WiLNoyl-5PI/AAAAAAAABKQ/dbVxdZxzm4otU4arwK9kCmQ4TiVeoRBrACLcBGAs/s0/6.png "6.png")
-
 ![enter image description here](https://lh3.googleusercontent.com/-MiEtWQqj_ZY/WiLNwNgduRI/AAAAAAAABKY/-Q-o9Z2H1FoAzEgxW8la_vniqCKFpWVSACLcBGAs/s0/s_1+-+Copy.png "s_1 - Copy.png")
 	
 Xét Object thứ nhất (frame 1)   ta có : 
@@ -78,14 +82,14 @@ Như vậy khi ta có 1 hình ảnh gồm nhiều frame và 1 AtlasJson ta sẽ 
 
 6.	 **Sentences**
 
-Gồm tập hợp các file Json , mỗi file Json là 1 chủ đề : 
-
-![enter image description here](https://lh3.googleusercontent.com/-vpwsAj2G24A/WiLN4mnwSnI/AAAAAAAABKg/Sra7HfZLPe4gUeeYBXYhkdodm0N4D18qACLcBGAs/s0/7.png "7.png")
-
-Hình ảnh trên là file Json về chủ đề “Time” . File này là 1 mảng các Object . Mỗi object lại là một câu hỏi :
-* Line : Câu đầy đủ / chính xác . 
-* Alt1 : Câu thứ nhất bị thiếu .
-* Alt2 : Câu thứ 2 bị thiếu . tương tự với alt3 và alt4. 
+		Gồm tập hợp các file Json , mỗi file Json là 1 chủ đề : 
+		
+		![enter image description here](https://lh3.googleusercontent.com/-vpwsAj2G24A/WiLN4mnwSnI/AAAAAAAABKg/Sra7HfZLPe4gUeeYBXYhkdodm0N4D18qACLcBGAs/s0/7.png "7.png")
+		
+		Hình ảnh trên là file Json về chủ đề “Time” . File này là 1 mảng các Object . Mỗi object lại là một câu hỏi :
+		* Line : Câu đầy đủ / chính xác . 
+		* Alt1 : Câu thứ nhất bị thiếu .
+		* Alt2 : Câu thứ 2 bị thiếu . tương tự với alt3 và alt4. 
 
 ## IV. Xây dựng game
 1.	**Tạo file index.html trong Project game**
